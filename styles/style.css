@@ -7,7 +7,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: var(--page-padding);
+  padding: 0 var(--page-padding);
   font-family: "IBM Plex mono";
   font-size: 18px;
 }
@@ -17,41 +17,39 @@
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
   /* Высота шапки с учётом padding у .page */
-  min-height: calc(var(--height-phone) - var(--page-padding));
-  height: calc(100vh - var(--page-padding));
+  min-height: var(--height-phone);
+  height: 100vh;
   padding-bottom: 10px;
 }
 
 /* Декоративная часть шапки*/
-.decorated-zone::before {
-  /* Верхний уголок */
+.decorated-zone::before { /* Верхний уголок */
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0; /* Временно */
   content: " ";
   width: 25px;
   height: 25px;
-  border-top: 1px solid var(--header-decor-color);
-  border-right: 1px solid var(--header-decor-color);
+  border-top: 1px solid var(--interactive-color);
+  border-right: 1px solid var(--interactive-color);
 }
 
-.decorated-zone::after {
-  /* Нижний уголок */
+.decorated-zone::after { /* Нижний уголок */
   position: absolute;
   bottom: 10px;
   left: 0; /* Временно */
   content: " ";
   width: 25px;
   height: 25px;
-  border-bottom: 1px solid var(--header-decor-color);
-  border-left: 1px solid var(--header-decor-color);
+  border-bottom: 1px solid var(--interactive-color);
+  border-left: 1px solid var(--interactive-color);
 }
 
 .header__decorated-text {
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 28px;
-  color: var(--header-decor-color);
+  color: var(--interactive-color);
 }
 
 .header__decorated-text::after {
@@ -59,14 +57,19 @@
   position: absolute;
   left: 42px;
   top: 8px;
-  box-shadow: 0 0 5px 3px var(--header-decor-color);
+  box-shadow: 0 0 5px 3px var(--interactive-color);
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: var(--header-decor-color);
+  background-color: var(--interactive-color);
 }
 
 /* Кнопки переключения темы в шапке */
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
@@ -74,7 +77,7 @@
 }
 
 .header__theme-menu-button {
-  color: var(--header-decor-color);
+  color: var(--interactive-color);
   font-family: inherit;
   text-transform: lowercase;
   background-color: transparent;
@@ -85,33 +88,110 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--header-decor-color)66;
+  border: 1px solid var(--btn-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  box-shadow: 0 1px var(--interactive-color);
 }
 
 /* Контентная часть шапки*/
-.header__theme-menu {
-  align-self: center;
-  justify-self: end;
-}
-
-.header__title {
+.main-title {
   justify-self: center;
-  line-height: 81%;
-  color: var(--title-color);
+  line-height: 0.83em;
+  color: var(--main-title-color);
   text-shadow: 4px 4px var(--accent-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
 }
 
-.title-decor {
+.page .title-decor {
   font-weight: bold;
   align-self: center;
   line-height: 125%;
   background-color: var(--accent-color);
-  color: var(--hd-color);
+  color: var(--title-color);
 }
 
-.header__title {
+/* Основной контент */
+.content {
+  margin: 40px 0; /* Заменить при медиафичи */
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+.section__title {
+  color: var(--section-title-color);
+}
+
+.card__title {
+  margin-bottom: 10px;
+}
+
+.card__text {
+  color: var(--main-font-color);
+  line-height: 1.305em;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 1px 2px var(--accent-color);
+}
+
+.text-link:hover {
+  box-shadow: 0 1px var(--main-font-color);
+}
+
+.text-link:focus {
+  outline: none;
+}
+
+.text-link:focus-visible {
+  outline: 1px solid var(--main-font-color);
+}
+
+.card-list {
+  display: grid;
+  gap: 20px;
+}
+
+.card-list .card__title {
+  font-weight: normal;
+}
+
+.section-type-pictures {
+  gap: 10px;
+}
+
+/* Галлерея */
+.gallery {
+  display: grid;
+  gap: 10px; /* Поменять при медаифич */
+}
+
+.gallery__image {
+  width: 100%;
+}
+
+/* Подвалы */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  min-height: var(--height-phone);
+  height: 100vh;
 }
 
 /* Медиазапросы */

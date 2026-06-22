@@ -2,9 +2,12 @@
   --bg-page-image: url("../images/cover-image-dark.png");
   --bg-page-color: #000028;
   --accent-color: #ff0070;
-  --header-decor-color: #ff0070;
-  --title-color: #db00ff;
-  --hd-color: #000028;
+  --interactive-color: #ff0070;
+  --btn-hover-color: #ff007066;
+  --main-title-color: #db00ff;
+  --section-title-color: #ff0070;
+  --title-color: #000028;
+  --main-font-color: #f1b2ce;
   --height-phone: 668px;
   --page-padding: 10px;
 }
