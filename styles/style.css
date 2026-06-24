@@ -100,11 +100,6 @@
   box-shadow: 0 1px var(--interactive-color);
 }
 
-.header__theme-menu-button_active {
-  pointer-events: none;
-  outline: 1px solid var(--interactive-color);
-}
-
 /* Контентная часть шапки*/
 .header__title {
   justify-self: center;
