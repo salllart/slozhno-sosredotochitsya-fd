@@ -1,32 +1,32 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  background-image: var(--bg-page-image);
-  background-color: var(--bg-page-color);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   padding: 0 var(--page-padding);
   font-family: "IBM Plex mono";
   font-size: 18px;
+  background-color: var(--bg-page-color);
+  background-image: var(--bg-page-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  position: relative;
-  min-height: var(--height-phone);
   height: 100vh;
+  min-height: var(--height-phone);
   padding-bottom: 10px;
 }
 
 /* Декоративная часть шапки*/
 .decorated-zone::before {
+  content: " ";
   /* Верхний уголок */
   position: absolute;
   top: var(--page-padding);
   right: 0;
-  content: " ";
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--interactive-color);
@@ -34,11 +34,11 @@
 }
 
 .decorated-zone::after {
+  content: " ";
   /* Нижний уголок */
   position: absolute;
   bottom: var(--page-padding);
   left: 0;
-  content: " ";
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--interactive-color);
@@ -46,29 +46,29 @@
 }
 
 .header__decorated-text {
-  display: var(--display-decorated-text);
   position: absolute;
   top: var(--page-padding);
   right: 28px;
+  display: var(--display-decorated-text);
   color: var(--interactive-color);
 }
 
 .header__decorated-text::after {
   content: " ";
   position: absolute;
-  left: 42px;
   top: 8px;
-  box-shadow: 0 0 5px 3px var(--interactive-color);
+  left: 42px;
   width: 9px;
   height: 9px;
   border-radius: 50%;
+  box-shadow: 0 0 5px 3px var(--interactive-color);
   background-color: var(--interactive-color);
 }
 
 /* Кнопки переключения темы в шапке */
 .header__theme-menu {
-  align-self: center;
   justify-self: end;
+  align-self: center;
 }
 
 .header__theme-menu-list {
@@ -78,13 +78,13 @@
 }
 
 .header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  border: none;
   color: var(--interactive-color);
   font-family: inherit;
   text-transform: lowercase;
   background-color: transparent;
-  width: 70px;
-  height: 26px;
-  border: none;
   cursor: pointer;
 }
 
@@ -103,19 +103,19 @@
 /* Контентная часть шапки*/
 .header__title {
   justify-self: center;
-  line-height: 0.83em;
   color: var(--main-title-color);
-  text-shadow: 4px 4px var(--accent-color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.83em;
+  text-shadow: 4px 4px var(--accent-color);
 }
 
 .page .title-decor {
-  font-weight: bold;
   align-self: center;
+  color: var(--title-color);
+  font-weight: bold;
   line-height: 125%;
   background-color: var(--accent-color);
-  color: var(--title-color);
 }
 
 /* Основной контент */
@@ -193,21 +193,21 @@
 
 /* Подвалы */
 .footer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  min-height: var(--height-phone);
   height: 100vh;
+  min-height: var(--height-phone);
 }
 
 .footer__title {
   justify-self: center;
-  line-height: 0.83em;
   color: var(--main-title-color);
-  text-shadow: 2px 2px var(--accent-color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.83em;
+  text-shadow: 2px 2px var(--accent-color);
 }
 
 /* Медиазапросы */
@@ -226,9 +226,9 @@
   }
 
   .header__title {
-    grid-column: 1 / 3;
     position: relative;
     left: calc(-1 * var(--page-padding));
+    grid-column: 1 / 3;
     justify-self: left;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
@@ -239,8 +239,8 @@
 
   /* Изменения сеток основного контента */
   .content {
-    margin: 60px 0;
     gap: 80px;
+    margin: 60px 0;
   }
 
   .section {
@@ -266,8 +266,8 @@
   }
 
   .gallery {
-    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
   }
 
   .image-type-sunset {
@@ -296,9 +296,9 @@
 
 @media (width >=1024px) {
   .header__theme-menu {
-    margin-top: 20px;
-    align-self: start;
     justify-self: center;
+    align-self: start;
+    margin-top: 20px;
   }
 
   .header__theme-menu-list {
