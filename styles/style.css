@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: 0 var(--page-padding);
+  /* padding: 0 var(--page-padding); */
   font-family: "IBM Plex mono";
   font-size: 18px;
   background-color: var(--bg-page-color);
@@ -17,16 +17,16 @@
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   min-height: var(--height-phone);
+  padding: 0 var(--page-padding);
   padding-bottom: 10px;
 }
 
 /* Декоративная часть шапки*/
 .decorated-zone::before {
-  content: " ";
-  /* Верхний уголок */
+  content: "";
   position: absolute;
   top: var(--page-padding);
-  right: 0;
+  right: var(--page-padding);
   width: 25px;
   height: 25px;
   border-top: 1px solid var(--interactive-color);
@@ -34,11 +34,10 @@
 }
 
 .decorated-zone::after {
-  content: " ";
-  /* Нижний уголок */
+  content: "";
   position: absolute;
   bottom: var(--page-padding);
-  left: 0;
+  left: var(--page-padding);
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--interactive-color);
@@ -48,13 +47,13 @@
 .header__decorated-text {
   position: absolute;
   top: var(--page-padding);
-  right: 28px;
+  right: calc(28px + var(--page-padding));
   display: var(--display-decorated-text);
   color: var(--interactive-color);
 }
 
 .header__decorated-text::after {
-  content: " ";
+  content: "";
   position: absolute;
   top: 8px;
   left: 42px;
@@ -110,11 +109,14 @@
   text-shadow: 4px 4px var(--accent-color);
 }
 
-.page .title-decor {
+.header__subtitle {
   align-self: center;
+}
+
+.title-decor {
   color: var(--title-color);
   font-weight: bold;
-  line-height: 125%;
+  line-height: 1.25em;
   background-color: var(--accent-color);
 }
 
@@ -123,6 +125,7 @@
   display: grid;
   gap: 50px;
   margin: 40px 0;
+  padding: 0 var(--page-padding);
 }
 
 .section {
@@ -177,6 +180,10 @@
 /* Галлерея */
 .section-type-pictures {
   gap: 10px;
+}
+
+.section-type-pictures__title {
+  color: var(--title-color);
 }
 
 .gallery {
