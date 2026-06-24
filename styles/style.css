@@ -88,7 +88,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--btn-hover-color);
+  outline: 1px solid var(--btn-hov  er-color);
 }
 
 .header__theme-menu-button:focus {
@@ -242,12 +242,8 @@
     gap: 80px;
   }
 
-  .section-type-why {
+  .section {
     grid-template-columns: 1fr 2fr;
-  }
-
-  .section-type-why .card {
-    grid-column: 2 / -1;
   }
 
   .section-type-what {
@@ -258,15 +254,16 @@
     grid-column: 1 / -1;
   }
 
-  .section-type-how {
-    grid-template-columns: 1fr 2fr;
-  }
-
+  /* Сетка галлереи */
   .section-type-pictures {
+    grid-template-columns: auto;
     gap: 20px;
   }
 
-  /* Сетка галлереи */
+  .section-type-pictures .section__title {
+    grid-column: 1 / -1;
+  }
+
   .gallery {
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
