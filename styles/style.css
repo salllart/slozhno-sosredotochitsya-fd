@@ -16,8 +16,7 @@
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   min-height: var(--height-phone);
-  padding: 0 var(--page-padding);
-  padding-bottom: 10px;
+  padding: var(--page-padding);
 }
 
 /* Декоративная часть шапки*/
@@ -120,7 +119,7 @@
 .title-decor {
   color: var(--title-color);
   font-weight: bold;
-  line-height: 1.25em;
+  line-height: 1.305em;
   background-color: var(--accent-color);
 }
 
@@ -147,7 +146,11 @@
 
 .card__text {
   color: var(--main-font-color);
-  line-height: 1.305em;
+  line-height: 1.3em;
+}
+
+.card__text:not(:last-of-type) {
+  margin-bottom: 15px;
 }
 
 .text-link {
@@ -307,10 +310,10 @@
 }
 
 @media (width >=1024px) {
+  /* Изменения расположение кнопок */
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-top: 20px;
   }
 
   .header__theme-menu-list {
@@ -318,7 +321,20 @@
     flex-direction: row;
   }
 
+  /* Изменеия сеток в основном контенте */
+  .section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .section__content {
+    grid-column: 2 / -1;
+  }
+
   .section-type-what .section__content {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .gallery {
+    grid-column: 1 / -1;
   }
 }
