@@ -46,6 +46,7 @@
 }
 
 .header__decorated-text {
+  display: var(--display-decorated-text);
   position: absolute;
   top: var(--page-padding);
   right: 28px;
@@ -88,7 +89,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--btn-hov  er-color);
+  outline: 1px solid var(--btn-hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -97,6 +98,11 @@
 
 .header__theme-menu-button:focus-visible {
   box-shadow: 0 1px var(--interactive-color);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--interactive-color)
 }
 
 /* Контентная часть шапки*/

@@ -1,5 +1,6 @@
 :root {
   --bg-page-image: url("../images/cover-image-dark.png");
+  --display-decorated-text: block;
   --bg-page-color: #000028;
   --accent-color: #ff0070;
   --interactive-color: #ff0070;
