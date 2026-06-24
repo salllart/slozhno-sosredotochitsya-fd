@@ -5,8 +5,29 @@
 */
 
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-page-image: url("../images/cover-image-light.png");
+  --display-decorated-text: none;
+  --bg-page-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --interactive-color: #353430;
+  --btn-hover-color: #32312d66;
+  --main-title-color: #ffc2e6;
+  --section-title-color: #353430;
+  --title-color: #353430;
+  --main-font-color: #353430;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-page-image: url("../images/cover-image-light.png");
+    --display-decorated-text: none;
+    --bg-page-color: #fff1f7;
+    --accent-color: #ff8dcb;
+    --interactive-color: #353430;
+    --btn-hover-color: #32312d66;
+    --main-title-color: #ffc2e6;
+    --section-title-color: #353430;
+    --title-color: #353430;
+    --main-font-color: #353430;
+  }
 }

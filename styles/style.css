@@ -1,7 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* Надо будет повысить padding 10px при большем экране */
   background-image: var(--bg-page-image);
   background-color: var(--bg-page-color);
   background-size: cover;
@@ -16,14 +15,14 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
-  /* Высота шапки с учётом padding у .page */
   min-height: var(--height-phone);
   height: 100vh;
   padding-bottom: 10px;
 }
 
 /* Декоративная часть шапки*/
-.decorated-zone::before { /* Верхний уголок */
+.decorated-zone::before {
+  /* Верхний уголок */
   position: absolute;
   top: var(--page-padding);
   right: 0;
@@ -34,7 +33,8 @@
   border-right: 1px solid var(--interactive-color);
 }
 
-.decorated-zone::after { /* Нижний уголок */
+.decorated-zone::after {
+  /* Нижний уголок */
   position: absolute;
   bottom: var(--page-padding);
   left: 0;
@@ -46,6 +46,7 @@
 }
 
 .header__decorated-text {
+  display: var(--display-decorated-text);
   position: absolute;
   top: var(--page-padding);
   right: 28px;
@@ -88,7 +89,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--btn-hov  er-color);
+  outline: 1px solid var(--btn-hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -97,6 +98,11 @@
 
 .header__theme-menu-button:focus-visible {
   box-shadow: 0 1px var(--interactive-color);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--interactive-color);
 }
 
 /* Контентная часть шапки*/
@@ -121,7 +127,7 @@
 .content {
   display: grid;
   gap: 50px;
-  margin: 40px 0; /* Заменить при медиафичи */
+  margin: 40px 0;
 }
 
 .section {
@@ -180,7 +186,7 @@
 
 .gallery {
   display: grid;
-  gap: 10px; /* Поменять при медаифич */
+  gap: 10px;
 }
 
 .gallery__image {
@@ -210,7 +216,7 @@
 }
 
 /* Медиазапросы */
-@media (width >= 768px) {
+@media (width >=768px) {
   .page {
     --page-padding: 20px;
   }
@@ -236,7 +242,7 @@
     grid-column: 2;
   }
 
-  /* Изменения сетки основного контента */
+  /* Изменения сеток основного контента */
   .content {
     margin: 60px 0;
     gap: 80px;
@@ -293,7 +299,7 @@
   }
 }
 
-@media (width >= 1024px) {
+@media (width >=1024px) {
   .header__theme-menu {
     margin-top: 20px;
     align-self: start;
@@ -305,8 +311,7 @@
     flex-direction: row;
   }
 
-  .section-type-what .section__content{
+  .section-type-what .section__content {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
